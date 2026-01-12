@@ -1,0 +1,53 @@
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.teamMember {
+  text-align: center;
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-normal);
+}
+
+.teamMember:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.memberImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--spacing-sm);
+  border: 4px solid var(--sand);
+}
+
+.teamMember h4 {
+  color: var(--deep-green);
+  margin-bottom: var(--spacing-xs);
+}
+
+.role {
+  color: var(--terracotta);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

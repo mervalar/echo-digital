@@ -1,0 +1,119 @@
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.projectCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.1);
+}
+
+.projectOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  padding: var(--spacing-md);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+}
+
+.projectCard:hover .projectOverlay {
+  transform: translateY(0);
+}
+
+.projectCategory {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--terracotta);
+  color: var(--white);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.projectOverlay h3 {
+  color: var(--white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.projectOverlay p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.paginationButton {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--spacing-sm);
+  border: 2px solid rgba(15, 61, 46, 0.2);
+  background-color: var(--white);
+  color: var(--deep-green);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: var(--deep-green);
+  color: var(--white);
+  border-color: var(--deep-green);
+  transform: translateY(-2px);
+}
+
+.paginationButton.active {
+  background-color: var(--deep-green);
+  color: var(--white);
+  border-color: var(--deep-green);
+}
+
+.paginationButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .paginationButton {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+

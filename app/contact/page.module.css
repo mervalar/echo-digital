@@ -1,0 +1,228 @@
+.heroSection {
+  padding: calc(80px + var(--spacing-md)) 0 var(--spacing-lg);
+  background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(196, 90, 60, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 61, 46, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.heroSection h1 {
+  color: var(--white);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-heading);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: var(--spacing-md) auto 0;
+  line-height: 1.8;
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--sand);
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.contactImage {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.contactImage .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contactCard {
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.contactCard h2 {
+  color: var(--deep-green);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--sand);
+  margin: var(--spacing-md) 0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contactRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.contactIcon {
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contactText {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--deep-green);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.socialLink span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+}
+
+.socialLink:hover {
+  background-color: var(--terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(196, 90, 60, 0.3);
+}
+
+.ctaSection {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ctaSection h2 {
+  color: var(--deep-green);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ctaSection p {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 968px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+  }
+
+  .contactImage {
+    min-height: 400px;
+    order: 2;
+  }
+
+  .contactCard {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .contactCard {
+    padding: var(--spacing-md);
+  }
+
+  .contactImage {
+    min-height: 300px;
+  }
+}
+

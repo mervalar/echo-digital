@@ -1,0 +1,116 @@
+.heroSection {
+  padding: calc(80px + var(--spacing-md)) 0 var(--spacing-lg);
+  background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(196, 90, 60, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 61, 46, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.heroSection h1 {
+  color: var(--white);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-heading);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: var(--spacing-md) auto 0;
+  line-height: 1.8;
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--sand);
+}
+
+.storyContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.storyText h2 {
+  color: var(--deep-green);
+  margin-bottom: var(--spacing-md);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.storyText p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--text-light);
+}
+
+.storyImage {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .storyContent {
+    grid-template-columns: 1fr;
+  }
+
+  .storyImage {
+    order: -1;
+  }
+}
+

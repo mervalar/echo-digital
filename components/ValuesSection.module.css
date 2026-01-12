@@ -1,0 +1,59 @@
+.valuesSection {
+  padding: var(--spacing-xl) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.valueCard {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: var(--spacing-md);
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.valueIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.valueCard h3 {
+  color: var(--white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.valueCard p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.illustration {
+  margin-top: var(--spacing-lg);
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

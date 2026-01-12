@@ -1,0 +1,157 @@
+.serviceList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  justify-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.serviceItem {
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-normal);
+  width: 100%;
+  max-width: 100%;
+  min-height: auto;
+  height: auto;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+.serviceItem.visible {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.serviceItem.visible:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.serviceItem.visible:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.serviceItem.visible:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.serviceItem.visible:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.serviceItem.visible:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.serviceItem.visible:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.serviceItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.serviceHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceHeader h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.serviceIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.serviceIcon.deepGreen {
+  background-color: rgba(15, 61, 46, 0.1);
+  color: var(--deep-green);
+}
+
+.serviceIcon.terracotta {
+  background-color: rgba(196, 90, 60, 0.1);
+  color: var(--terracotta);
+}
+
+.serviceDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-light);
+}
+
+.benefitsSection {
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--sand);
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+}
+
+.benefitsList li {
+  padding: calc(var(--spacing-xs) / 2) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+  color: var(--text-light);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.benefitsList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .serviceList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceList {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .serviceIcon {
+    margin: 0 auto;
+  }
+}
+
