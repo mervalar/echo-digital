@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './Testimonials.module.css'
 
@@ -72,7 +72,26 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const testimonialsPerView = 3
+  
+  // Responsive testimonials per view
+  const [testimonialsPerView, setTestimonialsPerView] = useState(3)
+  
+  useEffect(() => {
+    const updateTestimonialsPerView = () => {
+      if (window.innerWidth <= 768) {
+        setTestimonialsPerView(1)
+      } else if (window.innerWidth <= 968) {
+        setTestimonialsPerView(2)
+      } else {
+        setTestimonialsPerView(3)
+      }
+    }
+    
+    updateTestimonialsPerView()
+    window.addEventListener('resize', updateTestimonialsPerView)
+    return () => window.removeEventListener('resize', updateTestimonialsPerView)
+  }, [])
+  
   const maxIndex = Math.max(0, testimonials.length - testimonialsPerView)
 
   const nextTestimonials = () => {

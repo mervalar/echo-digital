@@ -112,12 +112,17 @@
 
 .servicesRight {
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .servicesGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .serviceCard {
@@ -207,10 +212,12 @@
 @media (max-width: 768px) {
   .servicesSection {
     padding: var(--spacing-lg) 0;
+    overflow-x: hidden;
   }
   
   .servicesContent {
     gap: var(--spacing-md);
+    overflow-x: hidden;
   }
   
   .servicesTitle {
@@ -218,10 +225,24 @@
   }
   
   .servicesGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    overflow-x: hidden;
   }
   
   .serviceImageWrapper {
-    height: 140px;
+    height: 100px;
+  }
+  
+  .serviceCardContent {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .serviceTitle {
+    font-size: 0.95rem;
+  }
+  
+  .serviceDescription {
+    font-size: 0.75rem;
   }
 }

@@ -34,6 +34,8 @@
   align-items: center;
   gap: var(--spacing-md);
   position: relative;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .navButton {
@@ -69,6 +71,8 @@
   gap: var(--spacing-md);
   flex: 1;
   overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
 
 .testimonialCard {
@@ -187,9 +191,13 @@
 
   .testimonialsGrid {
     grid-template-columns: 1fr;
+    overflow-x: hidden;
   }
 
   .testimonialCard {
     padding: var(--spacing-md);
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
