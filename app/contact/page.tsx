@@ -83,19 +83,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <div className={styles.ctaSection}>
-            <h2>Ready to Start Your Project?</h2>
-            <p>
-              Let's work together to create something amazing. Get in touch today and let's discuss 
-              how we can help bring your vision to life.
-            </p>
-            <a href="/contact" className="btn btn-primary">Start Your Project</a>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

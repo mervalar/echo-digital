@@ -1,14 +1,15 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import styles from './ServiceList.module.css'
 
 const services = [
   {
     id: 1,
-    icon: '🎨',
     title: 'Brand Identity',
     description: 'Create a memorable brand that resonates with your audience and stands out in the market.',
+    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop',
     benefits: [
       'Logo design and brand guidelines',
       'Color palette and typography selection',
@@ -19,9 +20,9 @@ const services = [
   },
   {
     id: 2,
-    icon: '💻',
     title: 'Website Design',
     description: 'Beautiful, responsive websites that convert visitors into customers and drive business growth.',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop',
     benefits: [
       'Responsive design for all devices',
       'SEO optimization',
@@ -32,9 +33,9 @@ const services = [
   },
   {
     id: 3,
-    icon: '📱',
     title: 'UI/UX Design',
     description: 'Intuitive user experiences that delight users and maximize engagement across all devices.',
+    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop',
     benefits: [
       'User research and persona development',
       'Wireframing and prototyping',
@@ -45,9 +46,9 @@ const services = [
   },
   {
     id: 4,
-    icon: '🎬',
     title: 'Video Marketing',
     description: 'Compelling video content that tells your story and connects with your target audience.',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=300&fit=crop',
     benefits: [
       'Video concept and scriptwriting',
       'Professional production',
@@ -58,9 +59,9 @@ const services = [
   },
   {
     id: 5,
-    icon: '📊',
     title: 'Digital Strategy',
     description: 'Data-driven strategies that align with your business goals and maximize ROI.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
     benefits: [
       'Market research and analysis',
       'Competitive analysis',
@@ -71,9 +72,9 @@ const services = [
   },
   {
     id: 6,
-    icon: '🚀',
     title: 'E-Commerce Solutions',
     description: 'Complete e-commerce platforms that drive sales and provide exceptional shopping experiences.',
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=300&fit=crop',
     benefits: [
       'Shopping cart and checkout optimization',
       'Payment gateway integration',
@@ -125,10 +126,16 @@ export default function ServiceList() {
           }}
           className={`${styles.serviceItem} ${visibleItems.has(index) ? styles.visible : ''}`}
         >
+          <div className={styles.serviceImageWrapper}>
+            <Image
+              src={service.image}
+              alt={service.title}
+              width={400}
+              height={300}
+              className={styles.serviceImage}
+            />
+          </div>
           <div className={styles.serviceHeader}>
-            <div className={`${styles.serviceIcon} ${styles[service.color]}`}>
-              {service.icon}
-            </div>
             <h2 style={{ color: 'var(--deep-green)' }}>{service.title}</h2>
           </div>
           <p className={styles.serviceDescription}>{service.description}</p>

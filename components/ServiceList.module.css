@@ -9,7 +9,7 @@
 
 .serviceItem {
   background-color: var(--white);
-  padding: var(--spacing-md);
+  padding: 0;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-normal);
@@ -19,6 +19,9 @@
   height: auto;
   opacity: 0;
   transform: translateY(30px) scale(0.95);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .serviceItem.visible {
@@ -65,10 +68,27 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+.serviceImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(15, 61, 46, 0.1), rgba(196, 90, 60, 0.1));
+}
+
+.serviceImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.serviceItem:hover .serviceImage {
+  transform: scale(1.1);
+}
+
 .serviceHeader {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-md) 0;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -77,37 +97,17 @@
   margin: 0;
 }
 
-.serviceIcon {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.serviceIcon.deepGreen {
-  background-color: rgba(15, 61, 46, 0.1);
-  color: var(--deep-green);
-}
-
-.serviceIcon.terracotta {
-  background-color: rgba(196, 90, 60, 0.1);
-  color: var(--terracotta);
-}
-
 .serviceDescription {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: var(--spacing-sm);
   color: var(--text-light);
+  padding: 0 var(--spacing-md);
 }
 
 .benefitsSection {
   margin-top: var(--spacing-sm);
-  padding-top: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
   border-top: 1px solid var(--sand);
 }
 
